@@ -77,12 +77,12 @@ class EntidadJdbcOracle<J extends IEntidadPk, K extends IEntidadCuerpo> implemen
    * Devuelve un map con los campos y valores que componen el cuerpo y la clave
    * de la entidad.
    * 
-   * OJO!!! No se est� comprobando que se haya declarado un campo con el mismo
+   * OJO!!! No se está comprobando que se haya declarado un campo con el mismo
    * nombre en la clave y en el cuerpo. Si esto ocurriese, por un lado,
-   * conceptualmente se habr�a implementado una entidad err�nea, y por otro a
-   * nivel pr�ctico, en el resultado generado, a ese campo solo se le asignar�a
-   * el valor del "cuerpo" de la entidad, que es lo �ltimo que se recorre por
-   * reflexi�n.
+   * conceptualmente se habría implementado una entidad errónea, y por otro a
+   * nivel práctico, en el resultado generado, a ese campo solo se le asignaría
+   * el valor del "cuerpo" de la entidad, que es lo último que se recorre por
+   * reflexión.
    * 
    * @return
    */

@@ -10,26 +10,26 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="HABERES")
-@NamedQuery(name="Habere.findAll", query="SELECT h FROM Habere h")
-public class Habere implements Serializable {
+@NamedQuery(name="Haber.findAll", query="SELECT h FROM Haber h")
+public class Haber implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private HaberePK id;
+	private HaberPK id;
 	private String ejercicioFiscal;
-	private TpHabere tpHabere;
+	private TpHaber tpHabere;
 	private TpMes tpMes;
 	private Contrato contrato;
 	private Documento documento;
 
-	public Habere() {
+	public Haber() {
 	}
 
 
 	@EmbeddedId
-	public HaberePK getId() {
+	public HaberPK getId() {
 		return this.id;
 	}
 
-	public void setId(HaberePK id) {
+	public void setId(HaberPK id) {
 		this.id = id;
 	}
 
@@ -44,14 +44,14 @@ public class Habere implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to TpHabere
+	//bi-directional many-to-one association to TpHaber
 	@ManyToOne
 	@JoinColumn(name="id_haber")
-	public TpHabere getTpHabere() {
+	public TpHaber getTpHabere() {
 		return this.tpHabere;
 	}
 
-	public void setTpHabere(TpHabere tpHabere) {
+	public void setTpHabere(TpHaber tpHabere) {
 		this.tpHabere = tpHabere;
 	}
 

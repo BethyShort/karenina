@@ -17,14 +17,14 @@ public class TpAusencia implements Serializable {
 	private byte idTipoAusencia;
 	private String descripcion;
 	private List<Ausencia> ausencias;
-	private List<Vacacione> vacaciones;
+	private List<Vacacion> vacaciones;
 
 	public TpAusencia() {
 	}
 
 
 	@Id
-	@SequenceGenerator(name="TP_AUSENCIA_IDTIPOAUSENCIA_GENERATOR" )
+	@SequenceGenerator(name="TP_AUSENCIA_IDTIPOAUSENCIA_GENERATOR", sequenceName="TP_AUSENCIA ID_TIPO_AUSENCIA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_AUSENCIA_IDTIPOAUSENCIA_GENERATOR")
 	@Column(name="id_tipo_ausencia")
 	public byte getIdTipoAusencia() {
@@ -70,24 +70,24 @@ public class TpAusencia implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to Vacacione
+	//bi-directional many-to-one association to Vacacion
 	@OneToMany(mappedBy="tpAusencia")
-	public List<Vacacione> getVacaciones() {
+	public List<Vacacion> getVacaciones() {
 		return this.vacaciones;
 	}
 
-	public void setVacaciones(List<Vacacione> vacaciones) {
+	public void setVacaciones(List<Vacacion> vacaciones) {
 		this.vacaciones = vacaciones;
 	}
 
-	public Vacacione addVacacione(Vacacione vacacione) {
+	public Vacacion addVacacione(Vacacion vacacione) {
 		getVacaciones().add(vacacione);
 		vacacione.setTpAusencia(this);
 
 		return vacacione;
 	}
 
-	public Vacacione removeVacacione(Vacacione vacacione) {
+	public Vacacion removeVacacione(Vacacion vacacione) {
 		getVacaciones().remove(vacacione);
 		vacacione.setTpAusencia(null);
 

@@ -8,7 +8,7 @@ import javax.persistence.*;
  * 
  */
 @Embeddable
-public class HaberePK implements Serializable {
+public class HaberPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 	private int idRemuneracion;
@@ -18,7 +18,7 @@ public class HaberePK implements Serializable {
 	private byte idMes;
 	private byte idHaber;
 
-	public HaberePK() {
+	public HaberPK() {
 	}
 
 	@Column(name="id_remuneracion")
@@ -73,10 +73,10 @@ public class HaberePK implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof HaberePK)) {
+		if (!(other instanceof HaberPK)) {
 			return false;
 		}
-		HaberePK castOther = (HaberePK)other;
+		HaberPK castOther = (HaberPK)other;
 		return 
 			(this.idRemuneracion == castOther.idRemuneracion)
 			&& (this.idContrato == castOther.idContrato)

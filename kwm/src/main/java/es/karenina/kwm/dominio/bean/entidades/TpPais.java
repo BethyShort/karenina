@@ -16,7 +16,7 @@ public class TpPais implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private short idPais;
 	private String descripcion;
-	private List<Direccione> direcciones;
+	private List<Direccion> direcciones;
 	private List<TpProvincia> tpProvincias;
 
 	public TpPais() {
@@ -24,7 +24,7 @@ public class TpPais implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TP_PAISES_IDPAIS_GENERATOR" )
+	@SequenceGenerator(name="TP_PAISES_IDPAIS_GENERATOR", sequenceName="TP_PAISES ID_PAIS")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_PAISES_IDPAIS_GENERATOR")
 	@Column(name="id_pais")
 	public short getIdPais() {
@@ -45,24 +45,24 @@ public class TpPais implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to Direccione
+	//bi-directional many-to-one association to Direccion
 	@OneToMany(mappedBy="tpPais")
-	public List<Direccione> getDirecciones() {
+	public List<Direccion> getDirecciones() {
 		return this.direcciones;
 	}
 
-	public void setDirecciones(List<Direccione> direcciones) {
+	public void setDirecciones(List<Direccion> direcciones) {
 		this.direcciones = direcciones;
 	}
 
-	public Direccione addDireccione(Direccione direccione) {
+	public Direccion addDireccione(Direccion direccione) {
 		getDirecciones().add(direccione);
 		direccione.setTpPais(this);
 
 		return direccione;
 	}
 
-	public Direccione removeDireccione(Direccione direccione) {
+	public Direccion removeDireccione(Direccion direccione) {
 		getDirecciones().remove(direccione);
 		direccione.setTpPais(null);
 

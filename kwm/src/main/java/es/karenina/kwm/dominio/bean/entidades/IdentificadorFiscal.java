@@ -10,23 +10,23 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="IDENTIFICADORES_FISCALES")
-@NamedQuery(name="IdentificadoresFiscale.findAll", query="SELECT i FROM IdentificadoresFiscale i")
-public class IdentificadoresFiscale implements Serializable {
+@NamedQuery(name="IdentificadorFiscal.findAll", query="SELECT i FROM IdentificadorFiscal i")
+public class IdentificadorFiscal implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private IdentificadoresFiscalePK id;
+	private IdentificadorFiscalPK id;
 	private Empleado empleado;
-	private TpIdentificadore tpIdentificadore;
+	private TpIdentificador tpIdentificadore;
 
-	public IdentificadoresFiscale() {
+	public IdentificadorFiscal() {
 	}
 
 
 	@EmbeddedId
-	public IdentificadoresFiscalePK getId() {
+	public IdentificadorFiscalPK getId() {
 		return this.id;
 	}
 
-	public void setId(IdentificadoresFiscalePK id) {
+	public void setId(IdentificadorFiscalPK id) {
 		this.id = id;
 	}
 
@@ -43,14 +43,14 @@ public class IdentificadoresFiscale implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to TpIdentificadore
+	//bi-directional many-to-one association to TpIdentificador
 	@ManyToOne
 	@JoinColumn(name="id_tipo_identificador")
-	public TpIdentificadore getTpIdentificadore() {
+	public TpIdentificador getTpIdentificadore() {
 		return this.tpIdentificadore;
 	}
 
-	public void setTpIdentificadore(TpIdentificadore tpIdentificadore) {
+	public void setTpIdentificadore(TpIdentificador tpIdentificadore) {
 		this.tpIdentificadore = tpIdentificadore;
 	}
 

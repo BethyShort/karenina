@@ -11,24 +11,24 @@ import java.math.BigInteger;
  */
 @Entity
 @Table(name="PERIODOS_VACACIONES")
-@NamedQuery(name="PeriodosVacacione.findAll", query="SELECT p FROM PeriodosVacacione p")
-public class PeriodosVacacione implements Serializable {
+@NamedQuery(name="PeriodoVacacional.findAll", query="SELECT p FROM PeriodoVacacional p")
+public class PeriodoVacacional implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private PeriodosVacacionePK id;
+	private PeriodoVacacionalPK id;
 	private BigInteger fechaDesde;
 	private BigInteger fechaHasta;
-	private Vacacione vacacione;
+	private Vacacion vacacione;
 
-	public PeriodosVacacione() {
+	public PeriodoVacacional() {
 	}
 
 
 	@EmbeddedId
-	public PeriodosVacacionePK getId() {
+	public PeriodoVacacionalPK getId() {
 		return this.id;
 	}
 
-	public void setId(PeriodosVacacionePK id) {
+	public void setId(PeriodoVacacionalPK id) {
 		this.id = id;
 	}
 
@@ -53,18 +53,18 @@ public class PeriodosVacacione implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to Vacacione
+	//bi-directional many-to-one association to Vacacion
 	@ManyToOne
 	@JoinColumns({
 		@JoinColumn(name="ejercicio_fiscal", referencedColumnName="ejercicio_fiscal"),
 		@JoinColumn(name="id_empleado", referencedColumnName="id_empleado"),
 		@JoinColumn(name="id_tipo_ausencia", referencedColumnName="id_tipo_ausencia")
 		})
-	public Vacacione getVacacione() {
+	public Vacacion getVacacione() {
 		return this.vacacione;
 	}
 
-	public void setVacacione(Vacacione vacacione) {
+	public void setVacacione(Vacacion vacacione) {
 		this.vacacione = vacacione;
 	}
 

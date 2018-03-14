@@ -11,19 +11,19 @@ import java.util.List;
  */
 @Entity
 @Table(name="TP_HABERES")
-@NamedQuery(name="TpHabere.findAll", query="SELECT t FROM TpHabere t")
-public class TpHabere implements Serializable {
+@NamedQuery(name="TpHaber.findAll", query="SELECT t FROM TpHaber t")
+public class TpHaber implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private byte idHaber;
 	private String descripcion;
-	private List<Habere> haberes;
+	private List<Haber> haberes;
 
-	public TpHabere() {
+	public TpHaber() {
 	}
 
 
 	@Id
-	@SequenceGenerator(name="TP_HABERES_IDHABER_GENERATOR" )
+	@SequenceGenerator(name="TP_HABERES_IDHABER_GENERATOR", sequenceName="TP_HABERES ID_HABER")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_HABERES_IDHABER_GENERATOR")
 	@Column(name="id_haber")
 	public byte getIdHaber() {
@@ -44,24 +44,24 @@ public class TpHabere implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to Habere
+	//bi-directional many-to-one association to Haber
 	@OneToMany(mappedBy="tpHabere")
-	public List<Habere> getHaberes() {
+	public List<Haber> getHaberes() {
 		return this.haberes;
 	}
 
-	public void setHaberes(List<Habere> haberes) {
+	public void setHaberes(List<Haber> haberes) {
 		this.haberes = haberes;
 	}
 
-	public Habere addHabere(Habere habere) {
+	public Haber addHabere(Haber habere) {
 		getHaberes().add(habere);
 		habere.setTpHabere(this);
 
 		return habere;
 	}
 
-	public Habere removeHabere(Habere habere) {
+	public Haber removeHabere(Haber habere) {
 		getHaberes().remove(habere);
 		habere.setTpHabere(null);
 

@@ -23,7 +23,7 @@ public class TpContrato implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TP_CONTRATOS_IDTPCONTRATO_GENERATOR" )
+	@SequenceGenerator(name="TP_CONTRATOS_IDTPCONTRATO_GENERATOR", sequenceName="TP_CONTRATOS ID_TP_CONTRATO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_CONTRATOS_IDTPCONTRATO_GENERATOR")
 	@Column(name="id_tp_contrato")
 	public byte getIdTpContrato() {

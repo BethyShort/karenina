@@ -23,7 +23,7 @@ public class Turno implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TURNOS_IDTURNO_GENERATOR" )
+	@SequenceGenerator(name="TURNOS_IDTURNO_GENERATOR", sequenceName="TURNOS ID_TURNO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TURNOS_IDTURNO_GENERATOR")
 	@Column(name="id_turno")
 	public byte getIdTurno() {

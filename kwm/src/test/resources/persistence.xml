@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="GeneradorEntidades">
+		<class>model.Ausencia</class>
+		<class>model.AusenciaPK</class>
+		<class>model.Contacto</class>
+		<class>model.ContactoPK</class>
+		<class>model.Contrato</class>
+		<class>model.ContratoPK</class>
+		<class>model.DetalleHorario</class>
+		<class>model.DetalleHorarioPK</class>
+		<class>model.Direccion</class>
+		<class>model.Documento</class>
+		<class>model.Empleado</class>
+		<class>model.Empresa</class>
+		<class>model.EmpresaPK</class>
+		<class>model.Haber</class>
+		<class>model.HaberPK</class>
+		<class>model.Horario</class>
+		<class>model.HorarioPK</class>
+		<class>model.IdentificadorFiscal</class>
+		<class>model.IdentificadorFiscalPK</class>
+		<class>model.PeriodoVacacional</class>
+		<class>model.PeriodoVacacionalPK</class>
+		<class>model.RelAusenciaDocumento</class>
+		<class>model.RelAusenciaDocumentoPK</class>
+		<class>model.RelContactoDireccion</class>
+		<class>model.RelContactoDireccionPK</class>
+		<class>model.TpAusencia</class>
+		<class>model.TpContacto</class>
+		<class>model.TpContrato</class>
+		<class>model.TpDiaSemana</class>
+		<class>model.TpDocumento</class>
+		<class>model.TpHaber</class>
+		<class>model.TpIdentificador</class>
+		<class>model.TpMes</class>
+		<class>model.TpPais</class>
+		<class>model.TpProvincia</class>
+		<class>model.Turno</class>
+		<class>model.Vacacion</class>
+		<class>model.VacacionPK</class>
+	</persistence-unit>
+</persistence>

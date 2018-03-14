@@ -4,18 +4,18 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- * The primary key class for the VACACIONES database table.
+ * The primary key class for the PERIODOS_VACACIONES database table.
  * 
  */
 @Embeddable
-public class VacacionePK implements Serializable {
+public class PeriodoVacacionalPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 	private int idEmpleado;
 	private byte idTipoAusencia;
 	private short ejercicioFiscal;
 
-	public VacacionePK() {
+	public PeriodoVacacionalPK() {
 	}
 
 	@Column(name="id_empleado", insertable=false, updatable=false)
@@ -34,7 +34,7 @@ public class VacacionePK implements Serializable {
 		this.idTipoAusencia = idTipoAusencia;
 	}
 
-	@Column(name="ejercicio_fiscal")
+	@Column(name="ejercicio_fiscal", insertable=false, updatable=false)
 	public short getEjercicioFiscal() {
 		return this.ejercicioFiscal;
 	}
@@ -46,10 +46,10 @@ public class VacacionePK implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof VacacionePK)) {
+		if (!(other instanceof PeriodoVacacionalPK)) {
 			return false;
 		}
-		VacacionePK castOther = (VacacionePK)other;
+		PeriodoVacacionalPK castOther = (PeriodoVacacionalPK)other;
 		return 
 			(this.idEmpleado == castOther.idEmpleado)
 			&& (this.idTipoAusencia == castOther.idTipoAusencia)

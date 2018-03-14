@@ -16,14 +16,14 @@ public class TpMes implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private byte idMes;
 	private String descripcion;
-	private List<Habere> haberes;
+	private List<Haber> haberes;
 
 	public TpMes() {
 	}
 
 
 	@Id
-	@SequenceGenerator(name="TP_MESES_IDMES_GENERATOR" )
+	@SequenceGenerator(name="TP_MESES_IDMES_GENERATOR", sequenceName="TP_MESES ID_MES")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_MESES_IDMES_GENERATOR")
 	@Column(name="id_mes")
 	public byte getIdMes() {
@@ -44,24 +44,24 @@ public class TpMes implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to Habere
+	//bi-directional many-to-one association to Haber
 	@OneToMany(mappedBy="tpMes")
-	public List<Habere> getHaberes() {
+	public List<Haber> getHaberes() {
 		return this.haberes;
 	}
 
-	public void setHaberes(List<Habere> haberes) {
+	public void setHaberes(List<Haber> haberes) {
 		this.haberes = haberes;
 	}
 
-	public Habere addHabere(Habere habere) {
+	public Haber addHabere(Haber habere) {
 		getHaberes().add(habere);
 		habere.setTpMes(this);
 
 		return habere;
 	}
 
-	public Habere removeHabere(Habere habere) {
+	public Haber removeHabere(Haber habere) {
 		getHaberes().remove(habere);
 		habere.setTpMes(null);
 

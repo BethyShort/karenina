@@ -21,7 +21,7 @@ public class TpDiaSemana implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TP_DIA_SEMANA_IDTIPODIA_GENERATOR" )
+	@SequenceGenerator(name="TP_DIA_SEMANA_IDTIPODIA_GENERATOR", sequenceName="TP_DIA_SEMANA ID_TIPO_DIA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_DIA_SEMANA_IDTIPODIA_GENERATOR")
 	@Column(name="id_tipo_dia")
 	public byte getIdTipoDia() {

@@ -15,7 +15,7 @@ import java.util.List;
 public class TpProvincia implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private short idProvincia;
-	private List<Direccione> direcciones;
+	private List<Direccion> direcciones;
 	private TpPais tpPais;
 
 	public TpProvincia() {
@@ -23,7 +23,7 @@ public class TpProvincia implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TP_PROVINCIAS_IDPROVINCIA_GENERATOR" )
+	@SequenceGenerator(name="TP_PROVINCIAS_IDPROVINCIA_GENERATOR", sequenceName="TP_PROVINCIAS ID_PROVINCIA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_PROVINCIAS_IDPROVINCIA_GENERATOR")
 	@Column(name="id_provincia")
 	public short getIdProvincia() {
@@ -35,24 +35,24 @@ public class TpProvincia implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to Direccione
+	//bi-directional many-to-one association to Direccion
 	@OneToMany(mappedBy="tpProvincia")
-	public List<Direccione> getDirecciones() {
+	public List<Direccion> getDirecciones() {
 		return this.direcciones;
 	}
 
-	public void setDirecciones(List<Direccione> direcciones) {
+	public void setDirecciones(List<Direccion> direcciones) {
 		this.direcciones = direcciones;
 	}
 
-	public Direccione addDireccione(Direccione direccione) {
+	public Direccion addDireccione(Direccion direccione) {
 		getDirecciones().add(direccione);
 		direccione.setTpProvincia(this);
 
 		return direccione;
 	}
 
-	public Direccione removeDireccione(Direccione direccione) {
+	public Direccion removeDireccione(Direccion direccione) {
 		getDirecciones().remove(direccione);
 		direccione.setTpProvincia(null);
 

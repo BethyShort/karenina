@@ -18,14 +18,14 @@ public class Documento implements Serializable {
 	private String descripcion;
 	private String documento;
 	private TpDocumento tpDocumento;
-	private List<Habere> haberes;
+	private List<Haber> haberes;
 
 	public Documento() {
 	}
 
 
 	@Id
-	@SequenceGenerator(name="DOCUMENTOS_IDDOCUMENTO_GENERATOR" )
+	@SequenceGenerator(name="DOCUMENTOS_IDDOCUMENTO_GENERATOR", sequenceName="DOCUMENTOS ID_DOCUMENTO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DOCUMENTOS_IDDOCUMENTO_GENERATOR")
 	@Column(name="id_documento")
 	public int getIdDocumento() {
@@ -67,24 +67,24 @@ public class Documento implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to Habere
+	//bi-directional many-to-one association to Haber
 	@OneToMany(mappedBy="documento")
-	public List<Habere> getHaberes() {
+	public List<Haber> getHaberes() {
 		return this.haberes;
 	}
 
-	public void setHaberes(List<Habere> haberes) {
+	public void setHaberes(List<Haber> haberes) {
 		this.haberes = haberes;
 	}
 
-	public Habere addHabere(Habere habere) {
+	public Haber addHabere(Haber habere) {
 		getHaberes().add(habere);
 		habere.setDocumento(this);
 
 		return habere;
 	}
 
-	public Habere removeHabere(Habere habere) {
+	public Haber removeHabere(Haber habere) {
 		getHaberes().remove(habere);
 		habere.setDocumento(null);
 

@@ -23,7 +23,7 @@ public class TpContacto implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TP_CONTACTOS_TIPOCONTACTO_GENERATOR" )
+	@SequenceGenerator(name="TP_CONTACTOS_TIPOCONTACTO_GENERATOR", sequenceName="TP_CONTACTOS TIPO_CONTACTO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_CONTACTOS_TIPOCONTACTO_GENERATOR")
 	@Column(name="tipo_contacto")
 	public byte getTipoContacto() {

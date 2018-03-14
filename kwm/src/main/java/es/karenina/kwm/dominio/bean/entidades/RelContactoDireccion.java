@@ -10,21 +10,21 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="REL_CONTACTO_DIRECCIONES")
-@NamedQuery(name="RelContactoDireccione.findAll", query="SELECT r FROM RelContactoDireccione r")
-public class RelContactoDireccione implements Serializable {
+@NamedQuery(name="RelContactoDireccion.findAll", query="SELECT r FROM RelContactoDireccion r")
+public class RelContactoDireccion implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private RelContactoDireccionePK id;
+	private RelContactoDireccionPK id;
 
-	public RelContactoDireccione() {
+	public RelContactoDireccion() {
 	}
 
 
 	@EmbeddedId
-	public RelContactoDireccionePK getId() {
+	public RelContactoDireccionPK getId() {
 		return this.id;
 	}
 
-	public void setId(RelContactoDireccionePK id) {
+	public void setId(RelContactoDireccionPK id) {
 		this.id = id;
 	}
 

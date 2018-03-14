@@ -12,27 +12,27 @@ import java.util.List;
  */
 @Entity
 @Table(name="VACACIONES")
-@NamedQuery(name="Vacacione.findAll", query="SELECT v FROM Vacacione v")
-public class Vacacione implements Serializable {
+@NamedQuery(name="Vacacion.findAll", query="SELECT v FROM Vacacion v")
+public class Vacacion implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private VacacionePK id;
+	private VacacionPK id;
 	private String diasDisfrutados;
 	private String diasPermitidos;
 	private BigInteger timestamp;
-	private List<PeriodosVacacione> periodosVacaciones;
+	private List<PeriodoVacacional> periodosVacaciones;
 	private Empleado empleado;
 	private TpAusencia tpAusencia;
 
-	public Vacacione() {
+	public Vacacion() {
 	}
 
 
 	@EmbeddedId
-	public VacacionePK getId() {
+	public VacacionPK getId() {
 		return this.id;
 	}
 
-	public void setId(VacacionePK id) {
+	public void setId(VacacionPK id) {
 		this.id = id;
 	}
 
@@ -66,24 +66,24 @@ public class Vacacione implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to PeriodosVacacione
+	//bi-directional many-to-one association to PeriodoVacacional
 	@OneToMany(mappedBy="vacacione")
-	public List<PeriodosVacacione> getPeriodosVacaciones() {
+	public List<PeriodoVacacional> getPeriodosVacaciones() {
 		return this.periodosVacaciones;
 	}
 
-	public void setPeriodosVacaciones(List<PeriodosVacacione> periodosVacaciones) {
+	public void setPeriodosVacaciones(List<PeriodoVacacional> periodosVacaciones) {
 		this.periodosVacaciones = periodosVacaciones;
 	}
 
-	public PeriodosVacacione addPeriodosVacacione(PeriodosVacacione periodosVacacione) {
+	public PeriodoVacacional addPeriodosVacacione(PeriodoVacacional periodosVacacione) {
 		getPeriodosVacaciones().add(periodosVacacione);
 		periodosVacacione.setVacacione(this);
 
 		return periodosVacacione;
 	}
 
-	public PeriodosVacacione removePeriodosVacacione(PeriodosVacacione periodosVacacione) {
+	public PeriodoVacacional removePeriodosVacacione(PeriodoVacacional periodosVacacione) {
 		getPeriodosVacaciones().remove(periodosVacacione);
 		periodosVacacione.setVacacione(null);
 

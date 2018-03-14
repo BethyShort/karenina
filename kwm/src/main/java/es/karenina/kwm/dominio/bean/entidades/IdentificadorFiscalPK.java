@@ -8,13 +8,13 @@ import javax.persistence.*;
  * 
  */
 @Embeddable
-public class IdentificadoresFiscalePK implements Serializable {
+public class IdentificadorFiscalPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 	private String idIdentificador;
 	private int idEmpleado;
 
-	public IdentificadoresFiscalePK() {
+	public IdentificadorFiscalPK() {
 	}
 
 	@Column(name="id_identificador")
@@ -37,10 +37,10 @@ public class IdentificadoresFiscalePK implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof IdentificadoresFiscalePK)) {
+		if (!(other instanceof IdentificadorFiscalPK)) {
 			return false;
 		}
-		IdentificadoresFiscalePK castOther = (IdentificadoresFiscalePK)other;
+		IdentificadorFiscalPK castOther = (IdentificadorFiscalPK)other;
 		return 
 			this.idIdentificador.equals(castOther.idIdentificador)
 			&& (this.idEmpleado == castOther.idEmpleado);

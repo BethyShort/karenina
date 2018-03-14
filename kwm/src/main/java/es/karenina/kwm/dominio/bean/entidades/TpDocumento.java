@@ -23,7 +23,7 @@ public class TpDocumento implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TP_DOCUMENTO_IDTPDOCUMENTO_GENERATOR" )
+	@SequenceGenerator(name="TP_DOCUMENTO_IDTPDOCUMENTO_GENERATOR", sequenceName="TP_DOCUMENTO ID_TP_DOCUMENTO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_DOCUMENTO_IDTPDOCUMENTO_GENERATOR")
 	@Column(name="id_tp_documento")
 	public byte getIdTpDocumento() {

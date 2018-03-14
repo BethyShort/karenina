@@ -22,15 +22,15 @@ public class Empleado implements Serializable {
 	private List<Contacto> contactos;
 	private List<Contrato> contratos;
 	private List<Horario> horarios;
-	private List<IdentificadoresFiscale> identificadoresFiscales;
-	private List<Vacacione> vacaciones;
+	private List<IdentificadorFiscal> identificadoresFiscales;
+	private List<Vacacion> vacaciones;
 
 	public Empleado() {
 	}
 
 
 	@Id
-	@SequenceGenerator(name="EMPLEADOS_IDEMPLEADO_GENERATOR" )
+	@SequenceGenerator(name="EMPLEADOS_IDEMPLEADO_GENERATOR", sequenceName="EMPLEADOS ID_EMPLEADO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="EMPLEADOS_IDEMPLEADO_GENERATOR")
 	@Column(name="id_empleado")
 	public int getIdEmpleado() {
@@ -169,24 +169,24 @@ public class Empleado implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to IdentificadoresFiscale
+	//bi-directional many-to-one association to IdentificadorFiscal
 	@OneToMany(mappedBy="empleado")
-	public List<IdentificadoresFiscale> getIdentificadoresFiscales() {
+	public List<IdentificadorFiscal> getIdentificadoresFiscales() {
 		return this.identificadoresFiscales;
 	}
 
-	public void setIdentificadoresFiscales(List<IdentificadoresFiscale> identificadoresFiscales) {
+	public void setIdentificadoresFiscales(List<IdentificadorFiscal> identificadoresFiscales) {
 		this.identificadoresFiscales = identificadoresFiscales;
 	}
 
-	public IdentificadoresFiscale addIdentificadoresFiscale(IdentificadoresFiscale identificadoresFiscale) {
+	public IdentificadorFiscal addIdentificadoresFiscale(IdentificadorFiscal identificadoresFiscale) {
 		getIdentificadoresFiscales().add(identificadoresFiscale);
 		identificadoresFiscale.setEmpleado(this);
 
 		return identificadoresFiscale;
 	}
 
-	public IdentificadoresFiscale removeIdentificadoresFiscale(IdentificadoresFiscale identificadoresFiscale) {
+	public IdentificadorFiscal removeIdentificadoresFiscale(IdentificadorFiscal identificadoresFiscale) {
 		getIdentificadoresFiscales().remove(identificadoresFiscale);
 		identificadoresFiscale.setEmpleado(null);
 
@@ -194,24 +194,24 @@ public class Empleado implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to Vacacione
+	//bi-directional many-to-one association to Vacacion
 	@OneToMany(mappedBy="empleado")
-	public List<Vacacione> getVacaciones() {
+	public List<Vacacion> getVacaciones() {
 		return this.vacaciones;
 	}
 
-	public void setVacaciones(List<Vacacione> vacaciones) {
+	public void setVacaciones(List<Vacacion> vacaciones) {
 		this.vacaciones = vacaciones;
 	}
 
-	public Vacacione addVacacione(Vacacione vacacione) {
+	public Vacacion addVacacione(Vacacion vacacione) {
 		getVacaciones().add(vacacione);
 		vacacione.setEmpleado(this);
 
 		return vacacione;
 	}
 
-	public Vacacione removeVacacione(Vacacione vacacione) {
+	public Vacacion removeVacacione(Vacacion vacacione) {
 		getVacaciones().remove(vacacione);
 		vacacione.setEmpleado(null);
 

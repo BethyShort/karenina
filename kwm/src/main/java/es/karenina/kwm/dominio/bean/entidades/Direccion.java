@@ -10,8 +10,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="DIRECCIONES")
-@NamedQuery(name="Direccione.findAll", query="SELECT d FROM Direccione d")
-public class Direccione implements Serializable {
+@NamedQuery(name="Direccion.findAll", query="SELECT d FROM Direccion d")
+public class Direccion implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int idDireccion;
 	private String bloque;
@@ -24,12 +24,12 @@ public class Direccione implements Serializable {
 	private TpPais tpPais;
 	private TpProvincia tpProvincia;
 
-	public Direccione() {
+	public Direccion() {
 	}
 
 
 	@Id
-	@SequenceGenerator(name="DIRECCIONES_IDDIRECCION_GENERATOR" )
+	@SequenceGenerator(name="DIRECCIONES_IDDIRECCION_GENERATOR", sequenceName="DIRECCIONES ID_DIRECCION")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DIRECCIONES_IDDIRECCION_GENERATOR")
 	@Column(name="id_direccion")
 	public int getIdDireccion() {

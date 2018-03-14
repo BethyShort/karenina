@@ -11,19 +11,19 @@ import java.util.List;
  */
 @Entity
 @Table(name="TP_IDENTIFICADORES")
-@NamedQuery(name="TpIdentificadore.findAll", query="SELECT t FROM TpIdentificadore t")
-public class TpIdentificadore implements Serializable {
+@NamedQuery(name="TpIdentificador.findAll", query="SELECT t FROM TpIdentificador t")
+public class TpIdentificador implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private byte idTipoIdentificador;
 	private String descripcion;
-	private List<IdentificadoresFiscale> identificadoresFiscales;
+	private List<IdentificadorFiscal> identificadoresFiscales;
 
-	public TpIdentificadore() {
+	public TpIdentificador() {
 	}
 
 
 	@Id
-	@SequenceGenerator(name="TP_IDENTIFICADORES_IDTIPOIDENTIFICADOR_GENERATOR" )
+	@SequenceGenerator(name="TP_IDENTIFICADORES_IDTIPOIDENTIFICADOR_GENERATOR", sequenceName="TP_IDENTIFICADORES ID_TIPO_IDENTIFICADOR")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TP_IDENTIFICADORES_IDTIPOIDENTIFICADOR_GENERATOR")
 	@Column(name="id_tipo_identificador")
 	public byte getIdTipoIdentificador() {
@@ -44,24 +44,24 @@ public class TpIdentificadore implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to IdentificadoresFiscale
+	//bi-directional many-to-one association to IdentificadorFiscal
 	@OneToMany(mappedBy="tpIdentificadore")
-	public List<IdentificadoresFiscale> getIdentificadoresFiscales() {
+	public List<IdentificadorFiscal> getIdentificadoresFiscales() {
 		return this.identificadoresFiscales;
 	}
 
-	public void setIdentificadoresFiscales(List<IdentificadoresFiscale> identificadoresFiscales) {
+	public void setIdentificadoresFiscales(List<IdentificadorFiscal> identificadoresFiscales) {
 		this.identificadoresFiscales = identificadoresFiscales;
 	}
 
-	public IdentificadoresFiscale addIdentificadoresFiscale(IdentificadoresFiscale identificadoresFiscale) {
+	public IdentificadorFiscal addIdentificadoresFiscale(IdentificadorFiscal identificadoresFiscale) {
 		getIdentificadoresFiscales().add(identificadoresFiscale);
 		identificadoresFiscale.setTpIdentificadore(this);
 
 		return identificadoresFiscale;
 	}
 
-	public IdentificadoresFiscale removeIdentificadoresFiscale(IdentificadoresFiscale identificadoresFiscale) {
+	public IdentificadorFiscal removeIdentificadoresFiscale(IdentificadorFiscal identificadoresFiscale) {
 		getIdentificadoresFiscales().remove(identificadoresFiscale);
 		identificadoresFiscale.setTpIdentificadore(null);
 

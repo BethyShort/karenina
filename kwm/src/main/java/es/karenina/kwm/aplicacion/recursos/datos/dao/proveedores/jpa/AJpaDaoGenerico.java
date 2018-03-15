@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import app.excepciones.datos.ExcepcionDatos;
+import es.karenina.kwm.aplication.resources.excepciones.datos.ExcepcionDatos;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IDao;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidad;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidadCuerpo;

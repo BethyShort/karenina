@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.excepciones.datos.ExcepcionDatos;
 import es.karenina.kwm.aplicacion.recursos.datos.dao.proveedores.jdbc.oracle.JdbcOracleDaoGenerico;
+import es.karenina.kwm.aplication.resources.excepciones.datos.ExcepcionDatos;
 import es.karenina.kwm.dominio.bean.to.TituloValorTo;
 import es.karenina.kwm.dominio.recursos.datos.entidades.titulovalor.*;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IDao;

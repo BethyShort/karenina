@@ -2,7 +2,7 @@ package es.karenina.kwm.dominio.recursos.datos.interfaces;
 
 import java.util.List;
 
-import app.excepciones.datos.ExcepcionDatos;
+import es.karenina.kwm.aplication.resources.excepciones.datos.ExcepcionDatos;
 
 
 /**

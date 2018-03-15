@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
-import app.excepciones.datos.ExcepcionDatos;
+import es.karenina.kwm.aplication.resources.excepciones.datos.ExcepcionDatos;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidad;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidadCuerpo;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidadPk;

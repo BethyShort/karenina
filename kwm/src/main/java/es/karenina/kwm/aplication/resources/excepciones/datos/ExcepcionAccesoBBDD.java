@@ -1,4 +1,4 @@
-package app.excepciones.datos;
+package es.karenina.kwm.aplication.resources.excepciones.datos;
 
 public class ExcepcionAccesoBBDD extends ExcepcionDatos {
 

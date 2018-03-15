@@ -3,7 +3,7 @@ package es.karenina.kwm.dominio.recursos.datos.dao.gestores;
 
 import java.util.List;
 
-import app.excepciones.datos.ExcepcionDatos;
+import es.karenina.kwm.aplication.resources.excepciones.datos.ExcepcionDatos;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IDao;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidad;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidadCuerpo;

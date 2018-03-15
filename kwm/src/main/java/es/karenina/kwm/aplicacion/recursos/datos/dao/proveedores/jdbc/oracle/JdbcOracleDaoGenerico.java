@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import app.excepciones.datos.ExcepcionAccesoBBDD;
-import app.excepciones.datos.ExcepcionDatos;
-import app.excepciones.jee.ExcepcionJndi;
+import es.karenina.kwm.aplication.resources.excepciones.datos.ExcepcionAccesoBBDD;
+import es.karenina.kwm.aplication.resources.excepciones.datos.ExcepcionDatos;
+import es.karenina.kwm.aplication.resources.excepciones.jee.ExcepcionJndi;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IDao;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidad;
 import es.karenina.kwm.dominio.recursos.datos.interfaces.IEntidadCuerpo;

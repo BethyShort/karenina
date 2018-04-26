@@ -1,8 +1,8 @@
-package es.karenina.kwm.capa.infraestructura.trazas;
+package es.karenina.kwm.capa.infraestructura.trazas.log4j;
 
 public class ErrorLogger extends AbstractLogger {
 
-    public ErrorLogger(byte level) {
+    ErrorLogger(byte level) {
         this.level = level;
     }
 

@@ -1,4 +1,4 @@
-package es.karenina.kwm.capa.infraestructura.trazas;
+package es.karenina.kwm.capa.infraestructura.trazas.log4j;
 
 public class WarnLogger extends AbstractLogger{
 

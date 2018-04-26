@@ -1,8 +1,8 @@
-package es.karenina.kwm.capa.infraestructura.trazas;
+package es.karenina.kwm.capa.infraestructura.trazas.log4j;
 
 public class FatalLogger extends AbstractLogger {
     
-    public FatalLogger(byte level) {
+    FatalLogger(byte level) {
         this.level = level;
     }
 

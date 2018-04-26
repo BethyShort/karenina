@@ -1,14 +1,16 @@
-package es.karenina.kwm.capa.infraestructura.trazas;
+package es.karenina.kwm.capa.infraestructura.trazas.log4j;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+
+import es.karenina.kwm.capa.infraestructura.trazas.interfaces.ILoggerAplicacion;
 
 /**
  * 
  * @author sorel
  *
  */
-public abstract class AbstractLogger {
+public abstract class AbstractLogger implements ILoggerAplicacion{
 
     protected static final Logger log =Logger.getLogger(AbstractLogger.class);
     protected byte level;
